@@ -44,6 +44,10 @@ defmodule SwarmTest.Worker do
     Process.send_after(self(), :timeout, delay)
     {:noreply, {name, delay}}
   end
+  def handle_info({:msg, msg}, {name, delay}) do
+    IO.puts msg
+    {:noreply, {name, delay}}
+  end
   # this message is sent when this process should die
   # because it's being moved, use this as an opportunity
   # to clean up
