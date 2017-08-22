@@ -23,6 +23,7 @@ defmodule SwarmTest.Mixfile do
   defp deps do
     [
       {:swarm, "~> 3.0"},
+      {:libcluster, "~> 2.1"},
     ]
   end
 end
